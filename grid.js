@@ -14,12 +14,17 @@ $(document).ready(function(){
 
 			}
 	} else {
-			alert("Are you blind and dumb? Enter less than 42! Now do it again faggot.")
+			alert("Are you blind and dumb? Enter less than 42! Now do it again brah.");
 	}
 		
-	$(".grid").on("mouseenter", function(){
-		$(this).addClass("highlight");
-
+	$(".grid").on("mouseenter mousemove", function(ev){
+			var x = +ev.pageX;
+			var y = +ev.pageY;
+			x=x%255;
+			y=y%255;
+			z=(x+y)%255;
+			$(this).css({"background-color": "rgb("+x+","+y+","+z+")"});
+			//$(this).addClass("highlight");
 	});
 
 
